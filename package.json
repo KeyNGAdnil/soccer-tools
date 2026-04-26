@@ -7,17 +7,13 @@
     "build": "rsbuild build",
     "dev": "rsbuild --open",
     "format": "prettier --write .",
-    "preview": "rsbuild preview",
-    "cloudbase:deploy": "pnpm run build && tcb app deploy",
-    "cloudbase:list": "tcb app list",
-    "cloudbase:info": "tcb app info tifo-tools"
+    "preview": "rsbuild preview"
   },
   "dependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@cloudbase/cli": "^3.2.2",
     "@rsbuild/core": "^2.0.0",
     "@rsbuild/plugin-babel": "^1.1.2",
     "@rsbuild/plugin-react": "^2.0.0",
