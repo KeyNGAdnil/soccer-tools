@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+/* 与页面渐变起点一致，避免极窄视口或溢出时出现与条带不符的纯白条 */
+html {
+  background-color: #f8fafc;
+}
