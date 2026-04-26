@@ -76,7 +76,7 @@ export const SharedAttendeeView = ({
         <div>
           <h1 className="text-2xl font-semibold">查看我的座位</h1>
           <p className="mt-1 text-sm text-slate-500">
-            输入与规划时一致的座位编号（X、Y），绿色圆点为你的位置。
+            输入与规划时一致的座位编号（X、Y），红色圆点为你的位置。
           </p>
         </div>
         <button
@@ -136,8 +136,11 @@ export const SharedAttendeeView = ({
           onAdjust={adjustZoom}
           onReset={() => setZoom(1)}
         />
-        <div className="max-h-[min(85vh,900px)] overflow-auto rounded-md border border-slate-200/90 bg-slate-100/70 p-2">
-          <canvas ref={canvasRef} className="block cursor-default touch-none" />
+        <div className="max-h-[min(85vh,900px)] overflow-auto overscroll-contain rounded-md border border-slate-200/90 bg-slate-100/70 p-2 [-webkit-overflow-scrolling:touch]">
+          <canvas
+            ref={canvasRef}
+            className="block max-w-none cursor-default touch-pan-x touch-pan-y"
+          />
         </div>
       </section>
     </AppPageShell>

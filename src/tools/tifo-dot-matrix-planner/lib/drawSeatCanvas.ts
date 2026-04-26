@@ -40,7 +40,7 @@ export const drawTifoSeatCanvas = (
 
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.fillStyle = isMySeat ? '#059669' : '#94a3b8';
+      ctx.fillStyle = isMySeat ? '#dc2626' : '#94a3b8';
       ctx.fill();
     }
   }

@@ -8,6 +8,7 @@ import type {
 } from './lib/types';
 import { DEFAULT_CORNER_FORM, DEFAULT_SLOGAN } from './lib/constants';
 import { parseCorners } from './lib/geometry';
+import { copyTextToClipboard } from './lib/copyToClipboard';
 import { encodeSharePayload } from './lib/shareCodec';
 import { computeSeatData } from './lib/seatLayout';
 import { clampZoom, useSeatCanvas } from './hooks/useSeatCanvas';
@@ -126,7 +127,7 @@ export const TifoDotMatrixPlannerTool = ({
   const copyShareLink = useCallback(async () => {
     if (!shareUrl) return;
     try {
-      await navigator.clipboard.writeText(shareUrl);
+      await copyTextToClipboard(shareUrl);
       setCopyHint('已复制到剪贴板');
       window.setTimeout(() => setCopyHint(''), 2200);
     } catch {

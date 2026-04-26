@@ -13,6 +13,9 @@ dependencies:
     version: 19.2.5(react@19.2.5)
 
 devDependencies:
+  '@cloudbase/cli':
+    specifier: ^3.2.2
+    version: 3.2.2
   '@rsbuild/core':
     specifier: ^2.0.0
     version: 2.0.1
@@ -373,6 +376,11 @@ packages:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
+    dev: true
+
+  /@cloudbase/cli@3.2.2:
+    resolution: {integrity: sha512-6TyOniO2n6cEj8qw0qAUAmdyV7wjgR6wYmf9FHe8aWWAaM+giOuJxeCeC8Z3oUUz909a/eN4T0N3+noPj6iOsg==}
+    hasBin: true
     dev: true
 
   /@emnapi/core@1.10.0:

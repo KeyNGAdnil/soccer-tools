@@ -20,8 +20,11 @@ export const StepPreviewCanvas = ({
 }: StepPreviewCanvasProps) => (
   <section className="space-y-4 rounded-[10px] border border-slate-200/90 bg-white/80 p-4 shadow-sm backdrop-blur-sm">
     <ZoomToolbar zoom={zoom} onAdjust={onAdjustZoom} onReset={onResetZoom} />
-    <div className="max-h-[min(85vh,900px)] overflow-auto rounded-md border border-slate-200/90 bg-slate-100/70 p-2">
-      <canvas ref={canvasRef} className="block cursor-default touch-none" />
+    <div className="max-h-[min(85vh,900px)] overflow-auto overscroll-contain rounded-md border border-slate-200/90 bg-slate-100/70 p-2 [-webkit-overflow-scrolling:touch]">
+      <canvas
+        ref={canvasRef}
+        className="block max-w-none cursor-default touch-pan-x touch-pan-y"
+      />
     </div>
     <div className="flex flex-wrap gap-3">
       <button

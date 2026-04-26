@@ -15,7 +15,7 @@ export const StepShareLink = ({
     <h2 className="text-lg font-semibold">生成分享链接</h2>
     <p className="text-sm text-slate-500">
       参与者打开链接后，只需输入自己的座位
-      X、Y，即可在点阵图中看到自己的位置（绿色标记）。
+      X、Y，即可在点阵图中看到自己的位置（红色标记）。
     </p>
     {shareUrl ? (
       <>
