@@ -10,20 +10,23 @@ export const drawTifoSeatCanvas = (
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  const z = zoom;
-  const r = SEAT_RADIUS_BASE * z;
-  const pitch = (2 * SEAT_RADIUS_BASE + SEAT_GAP_BASE) * z;
+  const z = Math.max(0.01, zoom);
+  // 点阵与文案始终在固定逻辑坐标系中布局；缩放只放大/缩小整幅画面，避免缩放改变“哪些座位在字下”
+  const r = SEAT_RADIUS_BASE;
+  const pitch = 2 * SEAT_RADIUS_BASE + SEAT_GAP_BASE;
   const { rows, cols } = seatData;
 
   const logicalW = CANVAS_PAD * 2 + 2 * r + Math.max(0, cols - 1) * pitch;
   const logicalH = CANVAS_PAD * 2 + 2 * r + Math.max(0, rows - 1) * pitch;
   const dpr = window.devicePixelRatio || 1;
 
-  canvas.width = Math.floor(logicalW * dpr);
-  canvas.height = Math.floor(logicalH * dpr);
-  canvas.style.width = `${logicalW}px`;
-  canvas.style.height = `${logicalH}px`;
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const styleW = logicalW * z;
+  const styleH = logicalH * z;
+  canvas.width = Math.floor(styleW * dpr);
+  canvas.height = Math.floor(styleH * dpr);
+  canvas.style.width = `${styleW}px`;
+  canvas.style.height = `${styleH}px`;
+  ctx.setTransform(dpr * z, 0, 0, dpr * z, 0, 0);
 
   ctx.clearRect(0, 0, logicalW, logicalH);
   ctx.fillStyle = '#f8fafc';

@@ -7,7 +7,10 @@
     "build": "rsbuild build",
     "dev": "rsbuild --open",
     "format": "prettier --write .",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "deploy:hosting": "rsbuild build && tcb hosting deploy dist soccer-tools",
+    "hosting:detail": "tcb hosting detail",
+    "hosting:list": "tcb hosting list"
   },
   "dependencies": {
     "react": "^19.2.5",

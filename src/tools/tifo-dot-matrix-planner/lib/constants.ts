@@ -1,6 +1,6 @@
 import type { CornerForm, CornerKey } from './types';
 
-/** 画布上座位视觉：半径、圆心距中的间隙（逻辑像素，会随缩放放大） */
+/** 画布上座位视觉：半径、圆心距中的间隙（逻辑像素；整图缩放不改变点与文案的相对关系） */
 export const SEAT_RADIUS_BASE = 3.5;
 export const SEAT_GAP_BASE = 4;
 export const CANVAS_PAD = 16;
