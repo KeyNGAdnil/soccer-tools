@@ -4,6 +4,9 @@ import { pluginReact } from '@rsbuild/plugin-react';
 
 // Docs: https://rsbuild.rs/config/
 export default defineConfig({
+  server: {
+    base: '/soccer-tools/',
+  },
   html: {
     title: 'TIFO 工具箱',
     favicon: './public/favicon.svg',
